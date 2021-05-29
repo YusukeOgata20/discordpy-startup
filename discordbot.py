@@ -18,7 +18,7 @@ async def ping(ctx):
     await ctx.send('pong')
     
 # メッセージ受信時に動作する処理
-@client.event
+@bot.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
