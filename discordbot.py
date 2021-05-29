@@ -6,7 +6,7 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 CHANNEL_ID = os.environ['DISCORD_POST_CHANNEL']
-#client = discord.Client()
+client = discord.Client()
 
 
 @bot.event
