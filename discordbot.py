@@ -1,9 +1,12 @@
 from discord.ext import commands
+from discord.ext import tasks
 import os
 import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+CHANNEL_ID = os.environ['DISCORD_POST_CHANNEL']
+client = discord.Client()
 
 
 @bot.event
@@ -21,5 +24,13 @@ async def ping(ctx):
 async def neko(ctx):
     await ctx.send('にゃーん')
         
+# 60秒に一回ループ
+@tasks.loop(seconds=60)
+async def loop():
+    channel = client.get_channel(CHANNEL_ID)
+    await channel.send('時間だよ')  
+
+#ループ処理実行
+loop.start()
 
 bot.run(token)
