@@ -6,7 +6,7 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 CHANNEL_ID = os.environ['DISCORD_POST_CHANNEL']
-client = discord.Client()
+#client = discord.Client()
 
 
 @bot.event
@@ -20,10 +20,7 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
     
-@bot.command()
-async def neko(ctx):
-    await ctx.send('にゃーん')
-        
+"""        
 # 60秒に一回ループ
 @tasks.loop(seconds=60)
 async def loop():
@@ -32,5 +29,5 @@ async def loop():
 
 #ループ処理実行
 loop.start()
-
+"""
 bot.run(token)
