@@ -21,7 +21,7 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
     
-"""        
+
 # 60秒に一回ループ
 @tasks.loop(seconds=60)
 async def loop():
@@ -30,5 +30,5 @@ async def loop():
 
 #ループ処理実行
 loop.start()
-"""
+
 bot.run(token)
