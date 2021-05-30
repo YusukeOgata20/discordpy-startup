@@ -35,6 +35,7 @@ async def on_ready():
     global member_mention
     member_mention = "<@609895586979643415>"
     channel_sent = client.get_channel(848287069217620038)
+    await chanel_sent.send("準備完了")
     timeloop.start() #定期実行するメソッドの後ろに.start()をつける
 
 bot.run(token)
