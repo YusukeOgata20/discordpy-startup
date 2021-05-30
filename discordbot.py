@@ -26,7 +26,7 @@ async def ping(ctx):
 @tasks.loop(seconds=60)
 async def timeloop():
     now = datetime.now().strftime('%H:%M')
-    if now == '22:51':
+    if now == '22:54':
         await channel_sent.send(f"今日の予定\n{member_mention} テスト")#f文字列
         
 @client.event
